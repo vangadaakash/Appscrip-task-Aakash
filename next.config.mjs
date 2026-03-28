@@ -1,6 +1,6 @@
 const nextConfig = {
   images: {
-    domains: ['fakestoreapi.com', 'via.placeholder.com'],
+    unoptimized: true,
   },
 };
 
