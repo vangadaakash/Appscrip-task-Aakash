@@ -33,7 +33,7 @@ const fallbackProducts = [
     title: "Wireless Headphones",
     price: 99,
     category: "electronics",
-    image: "https://images.unsplash.com/photo-1518441902110-4b5c5d0d5f68"
+    image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=500&auto=format&fit=crop"
   },
   {
     id: 5,
