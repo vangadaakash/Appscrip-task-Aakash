@@ -4,6 +4,17 @@ import FilterSidebar from '@/components/FilterSidebar/FilterSidebar';
 import ProductGrid from '@/components/ProductGrid/ProductGrid';
 import styles from './page.module.css';
 
+const fallbackProducts = [
+  { id: 1, title: 'PPXOC MILKYWAY DRESS IN...', price: 120, category: "women's clothing", image: 'https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg' },
+  { id: 2, title: 'PRODUCT NAME', price: 49.99, category: "accessories", image: 'https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg' },
+  { id: 3, title: 'PRODUCT NAME', price: 35.0, category: "accessories", image: 'https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg' },
+  { id: 4, title: 'PRODUCT NAME', price: 60.0, category: "clothing", image: 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg' },
+  { id: 5, title: 'PRODUCT NAME', price: 25.0, category: "clothing", image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg' },
+  { id: 6, title: 'PRODUCT NAME', price: 99.99, category: "accessories", image: 'https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg' },
+  { id: 7, title: 'PRODUCT NAME', price: 15.0, category: "clothing", image: 'https://fakestoreapi.com/img/71li-ujtlTaL._AC_UX679_.jpg' },
+  { id: 8, title: 'PRODUCT NAME', price: 40.0, category: "clothing", image: 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg' }
+];
+
 async function getProducts() {
   try {
     // Vercel sometimes times out on dynamic requests to slow external APIs.
@@ -11,12 +22,13 @@ async function getProducts() {
     const res = await fetch('https://fakestoreapi.com/products');
     if (!res.ok) {
       console.error('API responded with status:', res.status);
-      return [];
+      return fallbackProducts;
     }
-    return res.json();
+    const data = await res.json();
+    return data && data.length > 0 ? data : fallbackProducts;
   } catch (error) {
     console.error('Error fetching products:', error);
-    return [];
+    return fallbackProducts;
   }
 }
 

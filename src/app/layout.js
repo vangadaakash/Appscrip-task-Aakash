@@ -1,3 +1,5 @@
+import './globals.css';
+
 export const metadata = {
   title: 'Discover Our Products | Appscrip E-commerce',
   description: 'Shop the latest trends in clothing, electronics, and jewelry. Find premium quality products curated just for you.',
