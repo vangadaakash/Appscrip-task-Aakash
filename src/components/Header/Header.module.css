@@ -1,0 +1,120 @@
+.header {
+  border-bottom: 1px solid var(--border-color);
+  background: var(--secondary-color);
+}
+
+.topBar {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mainHeader {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.logoAndActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.leftSection {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--text-main);
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+}
+
+.centerSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.actions {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.actions button {
+  font-size: 20px;
+}
+
+.langSelect {
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.navList {
+  display: flex;
+  gap: 32px;
+}
+
+.navList a {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.navList a:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .topBar span:not(:first-child) {
+    display: none;
+  }
+  .navList {
+    display: none; /* Mobile menu would toggle this */
+  }
+  .logoAndActions {
+    margin-bottom: 0;
+  }
+  .hamburger {
+    display: block;
+  }
+}
