@@ -5,11 +5,19 @@ import ProductGrid from '@/components/ProductGrid/ProductGrid';
 import styles from './page.module.css';
 
 async function getProducts() {
-  const res = await fetch('https://fakestoreapi.com/products', { cache: 'no-store' });
-  if (!res.ok) {
+  try {
+    // Vercel sometimes times out on dynamic requests to slow external APIs.
+    // Using default caching or revalidate instead of 'no-store' makes it reliable.
+    const res = await fetch('https://fakestoreapi.com/products');
+    if (!res.ok) {
+      console.error('API responded with status:', res.status);
+      return [];
+    }
+    return res.json();
+  } catch (error) {
+    console.error('Error fetching products:', error);
     return [];
   }
-  return res.json();
 }
 
 export default async function Home() {
