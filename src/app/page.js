@@ -17,14 +17,17 @@ const fallbackProducts = [
 
 async function getProducts() {
   try {
-    // Vercel sometimes times out on dynamic requests to slow external APIs.
-    // Using default caching or revalidate instead of 'no-store' makes it reliable.
-    const res = await fetch('https://fakestoreapi.com/products');
+    const res = await fetch('https://fakestoreapi.com/products', {
+      cache: 'no-store', // 🔥 IMPORTANT FIX
+    });
+
     if (!res.ok) {
       console.error('API responded with status:', res.status);
       return fallbackProducts;
     }
+
     const data = await res.json();
+
     return data && data.length > 0 ? data : fallbackProducts;
   } catch (error) {
     console.error('Error fetching products:', error);
@@ -63,7 +66,7 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header />
-      
+
       <main className="mainContent">
         <div className="container">
           <div className={styles.heroSection}>
@@ -72,21 +75,21 @@ export default async function Home() {
               Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus scelerisque. Dolor integer scelerisque nibh amet mi ut elementum dolor.
             </p>
           </div>
-          
+
           <div className={styles.controlsBar}>
             <div className={styles.itemsCount}>
               <strong>{products.length} ITEMS</strong>
               <button className={styles.toggleFilter}>&lt; HIDE FILTER</button>
             </div>
             <div className={styles.sortMobileFilter}>
-               <span className={styles.mobileFilterToggle}>FILTER</span>
-               <select className={styles.sortSelect} aria-label="Sort products">
-                 <option value="recommended">RECOMMENDED</option>
-                 <option value="newest">NEWEST FIRST</option>
-                 <option value="popular">POPULAR</option>
-                 <option value="high-low">PRICE: HIGH TO LOW</option>
-                 <option value="low-high">PRICE: LOW TO HIGH</option>
-               </select>
+              <span className={styles.mobileFilterToggle}>FILTER</span>
+              <select className={styles.sortSelect} aria-label="Sort products">
+                <option value="recommended">RECOMMENDED</option>
+                <option value="newest">NEWEST FIRST</option>
+                <option value="popular">POPULAR</option>
+                <option value="high-low">PRICE: HIGH TO LOW</option>
+                <option value="low-high">PRICE: LOW TO HIGH</option>
+              </select>
             </div>
           </div>
 
