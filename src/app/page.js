@@ -19,7 +19,7 @@ const fallbackProducts = [
     title: "Casual Sneakers",
     price: 79,
     category: "footwear",
-    image: "https://images.unsplash.com/photo-1528701800489-20be3c4d1c7c"
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop"
   },
   {
     id: 3,
@@ -54,7 +54,7 @@ const fallbackProducts = [
     title: "Denim Jacket",
     price: 110,
     category: "clothing",
-    image: "https://images.unsplash.com/photo-1521335629791-ce4aec67dd47"
+    image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500&auto=format&fit=crop"
   },
   {
     id: 8,
@@ -82,7 +82,7 @@ const fallbackProducts = [
     title: "Laptop Bag",
     price: 70,
     category: "bags",
-    image: "https://images.unsplash.com/photo-1512499617640-c2f999098c01"
+    image: "https://images.unsplash.com/photo-1593642532400-2682810df593?w=500&auto=format&fit=crop"
   },
   {
     id: 12,
