@@ -8,13 +8,12 @@ export default function ProductCard({ product }) {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        {/* Fill layout to respect container aspect ratio */}
-        <Image
-          src={imageSrc}
-          alt={product.title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        {/* Using standard img tag entirely bypasses Next.js Image Optimization 502 Vercel errors */}
+        <img 
+          src={imageSrc} 
+          alt={product.title} 
           className={styles.image}
+          style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '16px' }}
         />
       </div>
       <div className={styles.info}>
