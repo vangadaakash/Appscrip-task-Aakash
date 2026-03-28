@@ -7,14 +7,14 @@ import ProductGrid from '@/components/ProductGrid/ProductGrid';
 import styles from './page.module.css';
 
 const fallbackProducts = [
-  { id: 1, title: 'PPXOC MILKYWAY DRESS IN...', price: 120, category: "women's clothing", image: 'https://via.placeholder.com/300x400/000000/FFFFFF?text=Product' },
-  { id: 2, title: 'PRODUCT NAME', price: 49.99, category: "accessories", image: 'https://via.placeholder.com/300x400/888888/FFFFFF?text=Product' },
-  { id: 3, title: 'PRODUCT NAME', price: 35.0, category: "accessories", image: 'https://via.placeholder.com/300x400/cccccc/000000?text=Product' },
-  { id: 4, title: 'PRODUCT NAME', price: 60.0, category: "clothing", image: 'https://via.placeholder.com/300x400/111111/FFFFFF?text=Product' },
-  { id: 5, title: 'PRODUCT NAME', price: 25.0, category: "clothing", image: 'https://via.placeholder.com/300x400/333333/FFFFFF?text=Product' },
-  { id: 6, title: 'PRODUCT NAME', price: 99.99, category: "accessories", image: 'https://via.placeholder.com/300x400/dddddd/000000?text=Product' },
-  { id: 7, title: 'PRODUCT NAME', price: 15.0, category: "clothing", image: 'https://via.placeholder.com/300x400/555555/FFFFFF?text=Product' },
-  { id: 8, title: 'PRODUCT NAME', price: 40.0, category: "clothing", image: 'https://via.placeholder.com/300x400/777777/FFFFFF?text=Product' }
+  { id: 1, title: 'PPXOC MILKYWAY DRESS IN...', price: 120, category: "women's clothing", image: 'https://picsum.photos/seed/bag/400/500' },
+  { id: 2, title: 'PRODUCT NAME', price: 49.99, category: "accessories", image: 'https://picsum.photos/seed/shoes/400/500' },
+  { id: 3, title: 'PRODUCT NAME', price: 35.0, category: "accessories", image: 'https://picsum.photos/seed/watch/400/500' },
+  { id: 4, title: 'PRODUCT NAME', price: 60.0, category: "clothing", image: 'https://picsum.photos/seed/shirt/400/500' },
+  { id: 5, title: 'PRODUCT NAME', price: 25.0, category: "clothing", image: 'https://picsum.photos/seed/hat/400/500' },
+  { id: 6, title: 'PRODUCT NAME', price: 99.99, category: "accessories", image: 'https://picsum.photos/seed/glasses/400/500' },
+  { id: 7, title: 'PRODUCT NAME', price: 15.0, category: "clothing", image: 'https://picsum.photos/seed/jeans/400/500' },
+  { id: 8, title: 'PRODUCT NAME', price: 40.0, category: "clothing", image: 'https://picsum.photos/seed/jacket/400/500' }
 ];
 
 async function getProducts() {
